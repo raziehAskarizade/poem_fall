@@ -21,17 +21,20 @@ h2 {
 }
 
 #content {
-    float:left;
+    float:right;
     width:60%;
     padding:0 0 0 30px;
 }
 
 #sidebar {
-    float:right;
+    float:left;
     width:30%;
     padding:10px;
     background:#efefef;
     height:100%;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+   /* border-radius: 22px 45px 30px 10px;*/
 }
 
 p.date {

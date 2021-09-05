@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'weblog/base.html' %}
 
-</body>
-</html>
+{% block title %}اشعار{% endblock %}
+
+{% block content %}
+
+    <h1>لیست اشعار</h1>
+        {% for pos in post %}
+            <h2>
+                <a href="{{ pos.get_absolute_url }}">
+                    {{ pos.title }}
+                </a>
+            </h2>
+            <p class="date"> منتشر شد {{ pos.author }} توسط {{ pos.publish }} شعر در تاریخ </p>
+            {{ pos.body|truncatechars:50| linebreaks }}
+        {% endfor %}
+    {% include 'weblog/pagination.html' with page_number=post %}
+{% endblock %}

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'weblog/base.html' %}
 
-</body>
-</html>
+{% block title %}{{ post.title}}{% endblock %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <p class="date"> منتشر شد {{ post.author }} توسط {{ post.publish }} شعر در تاریخ </p>
+    {{ post.body|linebreaks }}
+    
+{% endblock %}
