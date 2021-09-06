@@ -10,8 +10,11 @@
     </i>
     <span>
         {% if page_number.has_next %}
-            <a href="?page={{ page_number.paginator.num_pages }}"> last</a>
-            <a href="?page={{ page_number.next_page_number }}"><i style="font-size: xx-large">&#8669;</i></a>
+            <a href="?page={{ page_number.paginator.num_pages }}"> last </a>
+            <a href="?page={{ page_number.next_page_number }}">
+                <i style="font-size: xx-large">&#8669;
+                </i>
+            </a>
         {% endif %}
     </span>
 </div>

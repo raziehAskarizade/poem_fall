@@ -1,13 +1,15 @@
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+# from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView
 
 from .models import Topic
 
+
 class PostListView(ListView):
     queryset = Topic.published.all()
     context_object_name = 'post'
     paginate_by = 3
+    paginate_orphans = 1
     template_name = 'weblog/post/post_list.html'
 
 
