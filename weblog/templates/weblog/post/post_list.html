@@ -14,5 +14,5 @@
             <p class="date"> منتشر شد {{ pos.author }} توسط {{ pos.publish }} شعر در تاریخ </p>
             {{ pos.body|truncatechars:50| linebreaks }}
         {% endfor %}
-    {% include 'weblog/pagination.html' with page_number=post %}
+    {% include 'weblog/pagination.html' with page_number=page_obj %}
 {% endblock %}
